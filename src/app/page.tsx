@@ -8,6 +8,7 @@ import { ProductCarousel } from "@/components/Carousel";
 import { ShowExtra } from "@/components/showExtra";
 import { Collection } from "@/components/Collection";
 import { Catalogs } from "@/components/Catalogs";
+import { AboutContainer } from "@/components/AboutContainer";
 export default function Home() {
   const [activeGender, setActiveGender] = useState<boolean>(true);
   const favoiteProdcuts = [
@@ -724,7 +725,7 @@ export default function Home() {
     </div>
     <Catalogs link="/" linkButtonTitle="Перейти в каталог" product={styleData.slice(0, 10)} title="Кроссовок в каталоге" desc="В Unicflo есть такие культовые модели как: Nike Air Max, Dunk, New Balance 550, Air Jordan, Adidas Samba, Asics Gel Kahana. Разные расцветки от классических до редких коллекционные вариантов." />
     <Catalogs link="/" linkButtonTitle="Смотреть все кроссовки" product={styleData.slice(0, 10)} title="Забрать сегодня" desc="Самовывоз из магазина в Москве или доставка СДЭКом в любой город РФ" />
-
+    <AboutContainer/>
     </>
   ); 
 
