@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
 import { Geist_Mono } from "next/font/google";
 import "./globals.css";
-import Navbar from "./Navbar/page";
-import { Footer } from "@/components/Footer";
+import { Navbar } from "./Navbar/page";
+import { Footer} from "./Footer/page";
+
 
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
@@ -18,14 +19,15 @@ export default function RootLayout({children,}: Readonly<{children: React.ReactN
   return (
     <html lang="en">
       <body
-        className={` ${geistMono.variable} antialiased`}
+        className={` ${geistMono.variable} antialiased flex flex-col min-h-screen`}
       >
         <Navbar />
         {/** Main content */}
-        <main>
+        <main className="flex-grow">
         {children}
         </main>
-        <Footer />
+
+        <Footer/>
       </body>
     </html>
   );
