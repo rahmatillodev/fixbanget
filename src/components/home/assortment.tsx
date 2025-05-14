@@ -4,6 +4,7 @@ import React from "react";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import image from '../../assets/images/erasebg-transformed.png';
+
 export const Assortment: React.FC = () => {
   return (
     <div className="text-center relative bg-gradient-to-b from-[#ccc8c5] to-white pt-10 md:pt-0">

@@ -13,7 +13,7 @@ import image5 from '../../assets/images/mock/image9.png';
 import image6 from '../../assets/images/mock/image10.png';
 interface ProductCardProps {
   children: React.ReactNode;
-  image: StaticImageData;
+  // image: StaticImageData;
 }
 
 const ProductCard = ({ children, image }: ProductCardProps) => (

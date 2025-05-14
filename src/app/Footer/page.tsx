@@ -1,8 +1,9 @@
 import React from 'react';
-import telegram from '../../assets/images/telegramIcon.png';
-import instagram from '../../assets/images/instagramIcon.png';
-import youtube from '../../assets/images/youtubeIcon.png';
-import logo from '../../assets/images/logo.png';
+
+import telegram from '@/assets/images/telegramIcon.png';
+import instagram from '@/assets/images/instagramIcon.png';
+import youtube from '@/assets/images/youtubeIcon.png';
+import logo from '@/assets/images/logo.png';
 import Image from 'next/image';
 
 export const Footer: React.FC = () => {
@@ -16,6 +17,7 @@ export const Footer: React.FC = () => {
         </div>
         <div className="w-1/3 flex justify-center">
           <Image className="object-contain" src={logo} alt="Company Logo" loading="lazy" />
+
         </div>
       </div>
       <div className="flex w-11/12 mx-auto md:w-full mb-4">
