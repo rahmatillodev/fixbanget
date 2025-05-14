@@ -1,14 +1,7 @@
-'use client';
+"use client";
 
 import { useEffect, useState } from "react";
-import {
-  Menu,
-  Heart,
-  ShoppingBag,
-  Search,
-  X,
-  UserRound,
-} from "lucide-react";
+import { Menu, Heart, ShoppingBag, Search, X, UserRound } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import {
   Sheet,
@@ -47,9 +40,7 @@ interface CartItem {
 }
 
 export function Navbar() {
-  const [cartData, setCartData] = useState(
-    styleData.slice(0, 3).map((item) => ({ ...item, quantity: 1 }))
-  );
+  const [cartData, setCartData] = useState(styleData.slice(0, 3));
   const hasItems = cartData.length > 0;
   const [deleteAll, setDeleteAll] = useState<boolean>(hasItems);
 
@@ -240,7 +231,9 @@ export function Navbar() {
                   </SheetClose>
 
                   <SheetTitle className="flex border-b justify-between items-end pt-2 mt-5 md:pt-7 pb-2">
-                    <span className="text-[#1B1B1B] font-semibold text-xl">Ваша корзина</span>
+                    <span className="text-[#1B1B1B] font-semibold text-xl">
+                      Ваша корзина
+                    </span>
                     <button
                       className="text-[#F04438] font-semibold text-base cursor-pointer"
                       onClick={handleDeleteAll}
@@ -257,30 +250,39 @@ export function Navbar() {
                 <div className="px-4 flex flex-col gap-4 max-h-[60vh] overflow-y-auto">
                   {cartData.length > 0 ? (
                     cartData.map((item, index) => (
-                      <div key={index} className="flex gap-2 py-3 h-40 border-b">
-                        <Image
+                      <div
+                        key={index}
+                        className="flex gap-2 py-3 h-40 border-b"
+                      >
+                        <img
                           src={item.image}
-                          alt={item.name}
-                          className="h-full object-cover rounded-md"
-                          width={100}
-                          height={160}
+                          alt={item.link}
+                          className=" h-full object-cover rounded-md"
                         />
                         <div className="flex-1 flex flex-col justify-between">
                           <div>
-                            <p className="text-[14px] font-medium text-[#1B1B1BB2]">Весенняя коллекция</p>
-                            <h2 className="text-[#1B1B1B] text-base font-semibold">{item.name}</h2>
+                            <p className="text-[14px] font-medium text-[#1B1B1BB2]">
+                              Весенняя коллекция
+                            </p>
+                            <h2 className="text-[#1B1B1B] text-base font-semibold">
+                              {item.name}
+                            </h2>
                           </div>
                           <div className="flex items-center justify-between">
                             <div className="flex items-center gap-2 border rounded">
                               <button
                                 className="px-2 py-1 cursor-pointer"
                                 onClick={() => updateQuantity(index, -1)}
-                              >−</button>
+                              >
+                                −
+                              </button>
                               <span>{item.quantity}</span>
                               <button
                                 className="px-2 py-1 cursor-pointer"
                                 onClick={() => updateQuantity(index, 1)}
-                              >+</button>
+                              >
+                                +
+                              </button>
                             </div>
                             <div className="flex gap-2 items-baseline">
                               {item.oldPrice && (
@@ -288,7 +290,9 @@ export function Navbar() {
                                   ${item.oldPrice}
                                 </p>
                               )}
-                              <p className="text-[#1B1B1B] text-base font-extrabold">${item.price}</p>
+                              <p className="text-[#1B1B1B] text-base font-extrabold">
+                                ${item.price}
+                              </p>
                             </div>
                           </div>
                         </div>
@@ -299,7 +303,9 @@ export function Navbar() {
                       <div className="w-20 h-20 mx-auto bg-gray-100 rounded-full flex items-center justify-center">
                         <ShoppingBag className="w-8 h-8 text-gray-400" />
                       </div>
-                      <h1 className="text-[#1B1B1B] text-xl sm:text-2xl font-semibold capitalize mt-4">пустая корзина</h1>
+                      <h1 className="text-[#1B1B1B] text-xl sm:text-2xl font-semibold capitalize mt-4">
+                        пустая корзина
+                      </h1>
                       <p className="text-[#8D8D8D] font-normal text-sm sm:text-base px-4 sm:px-0">
                         В вашей корзине нет товаров.
                       </p>
@@ -311,11 +317,18 @@ export function Navbar() {
                   <div className="flex justify-between items-center text-[#1B1B1B] font-bold text-xl">
                     <h1>Итого</h1>
                     <h1>
-                      ${cartData.reduce((total, item) => total + item.price * item.quantity, 0).toFixed(2)}
+                      $
+                      {cartData
+                        .reduce(
+                          (total, item) => total + item.price * item.quantity,
+                          0
+                        )
+                        .toFixed(2)}
                     </h1>
                   </div>
                   <p className="text-[#1B1B1BB2] font-medium text-[12px] md:text-sm mt-1">
-                    Налоги и стоимость доставки будут рассчитаны при оформлении заказа.
+                    Налоги и стоимость доставки будут рассчитаны при оформлении
+                    заказа.
                   </p>
                   <div className="flex flex-col-reverse sm:flex-row gap-1 md:gap-3 mt-2 md:mt-6">
                     <SheetClose asChild className="w-full md:w-1/2">
