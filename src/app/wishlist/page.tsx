@@ -31,7 +31,7 @@ const Wishlist = () => {
         <h1 className='font-semibold text-xl sm:text-3xl md:text-4xl'>Мой список желаний</h1>
         {hasItems && !showEmptyState && (
           <Button
-            variant="ghost"
+            variant="default"
             onClick={handleDeleteAll}
             className="text-[#F04438] hover:bg-transparent font-medium text-sm sm:text-base"
           >

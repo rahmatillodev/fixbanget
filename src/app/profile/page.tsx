@@ -18,14 +18,14 @@ import { ProfileComponent } from "@/components/profileComponent/index";
 // import { TermsComponent } from "../components/termsComponent";
 // import { PrivacyComponent } from "../components/privacyComponent";
 // import { HelpComponent } from "../components/helpComponent";
-import { useAuthStore } from '@/stores/authStore';
+// import { useAuthStore } from '@/stores/authStore';
 import { useRouter } from 'next/navigation';
 
 const Profile: React.FC = () => {
     const [activeTab, setActiveTab] = useState<string>('profile');
     const [showDeleteDialog, setShowDeleteDialog] = useState<boolean>(false);
     const [showLogoutDialog, setShowLogoutDialog] = useState<boolean>(false);
-    const { logout } = useAuthStore();
+    // const { logout } = useAuthStore();
     const router = useRouter();
 
     const menuItems = [
@@ -37,14 +37,14 @@ const Profile: React.FC = () => {
     ];
 
     const handleLogout = () => {
-        logout();
+        // logout();
         router.push("/");
         alert('User logged out');
         setShowLogoutDialog(false);
     };
 
     const handleDeleteAccount = () => {
-        logout();
+        // logout();
         router.push("/");
         alert('Account deleted');
         setShowDeleteDialog(false);
@@ -114,7 +114,7 @@ const Profile: React.FC = () => {
                                 {menuItems.map((item) => (
                                     <Button
                                         key={item.id}
-                                        variant={activeTab === item.id ? 'secondary' : 'ghost'}
+                                        // variant={activeTab === item.id ? 'secondary' : 'ghost'}
                                         className="w-max md:w-full justify-start text-start my-2 md:my-0.5 gap-2 whitespace-normal"
                                         onClick={() => setActiveTab(item.id)}
                                     >
