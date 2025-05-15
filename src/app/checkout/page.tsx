@@ -145,7 +145,7 @@ function CheckOrder() {
                     />
                     <Button
                       size="icon"
-                      // variant="ghost"
+                      // variant="default"
                       className="absolute right-1 top-1/2 -translate-y-1/2"
                     >
                       {isAddressSaved ? (

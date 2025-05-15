@@ -7,17 +7,15 @@ import Image from "next/image";
 import { CategoriesCollection } from "../categoriesCollection";
 import { categoriesAccessories } from "@/lib/mockData";
 
-// Har bir mahsulot elementining interfeysi
-interface ProductItem {
+interface product {
   name: string;
   image: string;
-  slug?: string; // optional if you want dynamic routes later
+  slug?: string; 
 }
 
-// Props interfeysi
 
 
-export const AccessoriesCollection: React.FC<AccessoriesCollectionProps> = ({
+export const AccessoriesCollection = ({
   product,
 }) => {
   return (

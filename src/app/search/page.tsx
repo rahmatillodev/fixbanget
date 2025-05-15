@@ -196,42 +196,6 @@ const SearchPage = () => {
                     </>
                 )}
 
-                {/*
-                <h1 className='text-base text-[#222222] font-medium'>Из наличия или под заказ?</h1>
-                <p className='text-sm font-normal text-[#535353]'>Под заказ кроссовки будут дешевле, а из наличия приедут сегодня или завтра</p>
-                 <div className="flex justify-center mb-8">
-                    <div className="flex w-full border gap-0.5 rounded bg-[#F2F2F2] p-2 my-5">
-                        <Button
-                            className={clsx(
-                                "rounded px-5 py-5 text-sm font-bold w-1/2",
-                                filters.availability === "in-stock"
-                                    ? "bg-white text-black shadow hover:bg-white"
-                                    : "bg-transparent text-black shadow-none hover:bg-transparent"
-                            )}
-                            onClick={() => setFilters(prev => ({
-                                ...prev,
-                                availability: prev.availability === "in-stock" ? "" : "in-stock"
-                            }))}
-                        >
-                            🚀 Из наличия
-                        </Button>
-                        <Button
-                            className={clsx(
-                                "rounded px-5 py-5 text-sm font-bold w-1/2",
-                                filters.availability === "pre-order"
-                                    ? "bg-white text-black shadow hover:bg-white"
-                                    : "bg-transparent text-black shadow-none hover:bg-transparent"
-                            )}
-                            onClick={() => setFilters(prev => ({
-                                ...prev,
-                                availability: prev.availability === "pre-order" ? "" : "pre-order"
-                            }))}
-                        >
-                            🤑 Под заказ
-                        </Button>
-                    </div>
-                </div> */}
-
                 <div className="my-6">
                     <h1 className="text-base text-[#222222] font-medium mb-3">Цена, RUB</h1>
                     <div className="flex items-center gap-3">
@@ -446,7 +410,7 @@ const SearchPage = () => {
                                 <p className="text-base font-bold">Быстрая доставка ⚡</p>
                                 <p className="text-sm text-gray-600">Товары с доставкой за 0-2 дня или самовывоз</p>
                             </div>
-                            <Button variant="ghost" className="flex items-center rounded-2xl h-12 gap-1">
+                            <Button variant="default" className="flex items-center rounded-2xl h-12 gap-1">
                                 Все <ChevronRight className="text-4xl" />
                             </Button>
                         </div>
